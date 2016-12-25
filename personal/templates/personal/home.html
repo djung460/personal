@@ -1,0 +1,307 @@
+{% extends "personal/header.html" %}
+{% block content %}
+
+    {% load static from staticfiles %}
+
+    <!-- First Parallax Image with Logo Text -->
+    <div class="bgimg-1 w3-display-container w3-opacity-min" id="home">
+        <div class="w3-display-middle" style="white-space:nowrap;">
+        <span class="w3-center w3-padding-xlarge w3-black w3-xlarge w3-wide w3-animate-opacity">David <span
+                class="w3-hide-small">Jung</span> </span>
+        </div>
+    </div>
+
+    <!-- Container (About Section) -->
+    <div class="w3-content w3-container w3-padding-64" id="about">
+        <h3 class="w3-center">ABOUT ME</h3>
+        <br>
+        <div class="w3-row">
+            <div class="w3-col m6 w3-center w3-padding-large">
+                <img src="{% static 'images/Self_Jacket.JPG' %}"
+                     class="w3-round w3-image w3-opacity w3-hover-opacity-off" alt="Photo of Me" width="500"
+                     height="333">
+                <p>I'd rather be hiking</p>
+            </div>
+
+            <!-- Hide this text on small devices -->
+            <div class="w3-col m6 w3-hide-small w3-padding-large">
+                <p>
+                    Welcome! Here you'll find some of my projects and photos that I've taken. I hope you take some time
+                    to
+                    explore this site and learn more about myself and what I do.
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Second Parallax Image with Portfolio Text -->
+    <div class="bgimg-2 w3-display-container w3-opacity-min">
+        <div class="w3-display-middle">
+            <span class="w3-xxlarge w3-text-light-grey w3-wide">PORTFOLIO</span>
+        </div>
+    </div>
+
+    <!-- Container (Portfolio Software Section) -->
+    <div class="w3-content w3-container w3-padding-16" id="experience">
+        <h3 class="w3-center"><i class="fa fa-suitcase fa-fw w3-margin-right"></i>WORK EXPERIENCE</h3>
+        <div class="w3-container">
+            <h5><b>Software Developer (Co-op) | Design IT Solutions Corporation</b></h5>
+            <h6><i class="fa fa-calendar fa-fw w3-margin-right"></i>May 2016 - September 2016</h6>
+            <p>Developed an ASP.NET cost estimation application for mining. Covered web development, database design and
+                deployment with Microsoft SQL Server, and utilized software engineering best practices.</p>
+            <p>Developed a windows application for Civil Engineers for use in project planning. Solutions involved
+                drafting mathematics, OCR technologies (OpenCV), and resource optimization.</p>
+
+            <hr>
+        </div>
+        <div class="w3-container">
+            <h5><b>Robotics Instructor | NeoRize Enterprises</b></h5>
+            <h6><i class="fa fa-calendar fa-fw w3-margin-right"></i>May 2015 - September 2015</h6>
+            <p>Developed lesson plans and taught Scratch programming and LEGO based robotics. Advanced the business by
+                securing schools as clients as well as other private groups.</p>
+            <hr>
+        </div>
+    </div>
+
+    <!-- Container (Portfolio Software Section) -->
+    <div class="w3-content w3-container w3-margin-bottom w3-padding-16" id="projects">
+        <h3 class="w3-center w3-text-gray"><i class="fa fa-code fa-fw w3-margin-right"></i>PROJECTS</h3>
+
+        <div class="w3-container">
+            <h5><b><i class="fa fa-github w3-hover-text-black" style="width:30px"></i><a
+                    href="https://github.com/djung460/Locally">Locally</a></b></h5>
+            <h6><i class="fa fa-list fa-fw w3-margin-right"></i>Java | XML | AWS | Google Maps API | Android Studio</h6>
+            <p>Locally is an Android Application that will bring users closer to their farmer's markets.</p>
+            <img src="{% static 'images/Feature_Graphic.png' %}" style="width:100%"/>
+            <hr>
+        </div>
+
+        <div class="w3-container">
+            <h5><b>Turtlebot</b></h5>
+            <h6><i class="fa fa-list fa-fw w3-margin-right"></i>ROS | Python | Kinect | Linux</h6>
+            <p>Working on implementing the TurtleBot as a training platform for ROS; Responsible for software
+                development in Python; Integrating with Kinect for mapping and navigation; Gained familiarity working in
+                a Linux environment.</p>
+            <img src="{% static 'images/Mapping_Demo.png' %}" style="width:100%"/>
+            <hr>
+        </div>
+    </div>
+
+    <!-- Container (Portfolio Photo Section) -->
+    <div class="w3-content w3-container w3-padding-16" id="photos">
+        <h3 class="w3-center"><i class="fa fa-camera fa-fw w3-margin-right"></i>PHOTOS</h3>
+        <p class="w3-center"><em>Click on the images to make them bigger</em></p><br>
+
+        <!-- Responsive Grid. Four columns on tablets, laptops and desktops. Will stack on mobile devices/small screens (100% width) -->
+        <div class="w3-row-padding w3-center">
+            <div class="w3-col m3">
+                <img src="{% static 'images/Alouette_Lake.JPG' %}" style="width:100%"
+                     onclick="onClick(this)" class="w3-hover-opacity" alt="Alouette Lake">
+            </div>
+
+            <div class="w3-col m3">
+                <img src="{% static 'images/Boat.JPG' %}" style="width:100%"
+                     onclick="onClick(this)" class="w3-hover-opacity" alt="Boat">
+            </div>
+
+            <div class="w3-col m3">
+                <img src="{% static 'images/Sea_To_Sky_Mountains.JPG' %}"
+                     style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="Mountains">
+            </div>
+
+            <div class="w3-col m3">
+                <img src="{% static 'images/City_Skyline_Night.JPG' %}"
+                     style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="Vancity">
+            </div>
+        </div>
+
+        <div class="w3-row-padding w3-center w3-section">
+            <div class="w3-col m3">
+                <img src="{% static '/images/Seoul_Busy_Street_Night.JPG' %}"
+                     style="width:100%" onclick="onClick(this)" class="w3-hover-opacity" alt="Seoul Nights">
+            </div>
+
+            <div class="w3-col m3">
+                <img src="{% static '/images/Ted_Harrison.JPG' %}" style="width:100%"
+                     onclick="onClick(this)" class="w3-hover-opacity" alt="Ted Harrison">
+            </div>
+
+            <div class="w3-col m3">
+                <img src="{% static '/images/Porteau_Cove_Pier_Side.JPG' %}" style="width:100%" onclick="onClick(this)"
+                     class="w3-hover-opacity"
+                     alt="Porteau Cove Pier">
+            </div>
+
+            <div class="w3-col m3">
+                <img src="{% static '/images/Jug_Island.JPG' %}" style="width:100%" onclick="onClick(this)"
+                     class="w3-hover-opacity"
+                     alt="Jug Island Beach">
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal for full size images on click-->
+    <div id="modal01" class="w3-modal w3-black" onclick="this.style.display='none'">
+    <span class="w3-closebtn w3-text-white w3-opacity w3-hover-opacity-off w3-xxlarge w3-container w3-display-topright"
+          title="Close Modal Image"><i class="fa fa-remove"></i></span>
+        <div class="w3-modal-content w3-animate-zoom w3-center w3-transparent w3-padding-64">
+            <img id="img01" class="w3-image">
+            <p id="caption" class="w3-opacity w3-large"></p>
+        </div>
+    </div>
+
+    <!-- Third Parallax Image with Portfolio Text -->
+    <div class="bgimg-3 w3-display-container w3-opacity-min">
+        <div class="w3-display-middle">
+            <span class="w3-xxlarge w3-text-light-grey w3-wide">CONTACT</span>
+        </div>
+    </div>
+
+    <!-- Container (Contact Section) -->
+    <div class="w3-content w3-container w3-padding-64" id="contact">
+        <div class="w3-row w3-padding-32 w3-section">
+            <div class="w3-col m4 w3-container">
+                <!-- Add Google Maps -->
+                <div id="googleMap" class="w3-round-large w3-greyscale" style="width:100%;height:400px;"></div>
+            </div>
+            <div class="w3-col m8 w3-container w3-section">
+                <div class="w3-large w3-margin-bottom">
+                    <i class="fa fa-map-marker fa-fw w3-hover-text-black w3-xlarge w3-margin-right"></i> Vancouver,
+                    BC<br>
+                    <i class="fa fa-envelope fa-fw w3-hover-text-black w3-xlarge w3-margin-right"></i> Email:
+                    djung460@gmail.com<br>
+                    <i class="fa fa-github fa-fw w3-hover-text-black w3-xlarge w3-margin-right"></i> Github: <a
+                        href="https://github.com/djung460"> djung460 </a><br>
+                    <i class="fa fa-linkedin fa-fw w3-hover-text-black w3-xlarge w3-margin-right"></i> LinkedIn: <a
+                        href="https://ca.linkedin.com/in/djung460"> djung460 </a><br>
+                </div>
+                <p>Leave me a note</p>
+                <form action="form.asp" target="_blank">
+                    <div class="w3-row-padding" style="margin:0 -16px 8px -16px">
+                        <div class="w3-half">
+                            <input class="w3-input w3-border" type="text" placeholder="Name" required name="Name">
+                        </div>
+                        <div class="w3-half">
+                            <input class="w3-input w3-border" type="text" placeholder="Email" required name="Email">
+                        </div>
+                    </div>
+                    <input class="w3-input w3-border" type="text" placeholder="Message" required name="Message">
+                    <button class="w3-btn w3-black w3-right w3-padding w3-section" type="submit">
+                        <i class="fa fa-paper-plane"></i> SEND MESSAGE
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <style>
+        body, h1, h2, h3, h4, h5, h6 {
+            font-family: "Lato", sans-serif;
+        }
+
+        body, html {
+            height: 100%;
+            color: #777;
+            line-height: 1.8;
+        }
+
+        /* Create a Parallax Effect */
+        .bgimg-1, .bgimg-2, .bgimg-3 {
+            background-attachment: fixed;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+
+        /* First image (Logo. Full height) */
+        .bgimg-1 {
+            background-image: url("{% static 'images/Porteau_Cove_Pier.JPG' %}");
+            min-height: 100%;
+        }
+
+        /* Second image (Portfolio) */
+        .bgimg-2 {
+            background-image: url("{% static 'images/Seymour_Hut.JPG' %}");
+            min-height: 400px;
+        }
+
+        /* Third image (Contact) */
+        .bgimg-3 {
+            background-image: url("{% static 'images/Cypress_Lake.JPG' %}");
+            min-height: 400px;
+        }
+
+        .w3-wide {
+            letter-spacing: 10px;
+        }
+
+        .w3-hover-opacity {
+            cursor: pointer;
+        }
+
+        /* Turn off parallax scrolling for tablets and phones */
+        @media only screen and (max-device-width: 1024px) {
+            .bgimg-1, .bgimg-2, .bgimg-3 {
+                background-attachment: scroll;
+            }
+        }
+    </style>
+
+    <!-- Add Google Maps -->
+    <script src="https://maps.googleapis.com/maps/api/js"></script>
+    <script>
+        <!-- Google Map Location -->
+        var myCenter = new google.maps.LatLng(49.2827, -123.1207);
+
+        function initialize() {
+            var mapProp = {
+                center: myCenter,
+                zoom: 12,
+                scrollwheel: false,
+                draggable: false,
+                mapTypeId: google.maps.MapTypeId.ROADMAP
+            };
+
+            var map = new google.maps.Map(document.getElementById("googleMap"), mapProp);
+
+            var marker = new google.maps.Marker({
+                position: myCenter,
+            });
+
+            marker.setMap(map);
+        }
+
+        google.maps.event.addDomListener(window, 'load', initialize);
+
+        // Modal Image Gallery
+        function onClick(element) {
+            document.getElementById("img01").src = element.src;
+            document.getElementById("modal01").style.display = "block";
+            var captionText = document.getElementById("caption");
+            captionText.innerHTML = element.alt;
+        }
+
+        // Change style of navbar on scroll
+        window.onscroll = function () {
+            myFunction()
+        };
+        function myFunction() {
+            var navbar = document.getElementById("myNavbar");
+            if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
+                navbar.className = "w3-navbar" + " w3-card-2" + " w3-animate-top" + " w3-white";
+            } else {
+                navbar.className = navbar.className.replace(" w3-card-2 w3-animate-top w3-white", "");
+            }
+        }
+
+        // Used to toggle the menu on small screens when clicking on the menu button
+        function toggleFunction() {
+            var x = document.getElementById("navDemo");
+            if (x.className.indexOf("w3-show") == -1) {
+                x.className += " w3-show";
+            } else {
+                x.className = x.className.replace(" w3-show", "");
+            }
+        }
+    </script>
+{% endblock %}
