@@ -1,0 +1,53 @@
+<div class="w3-content w3-container w3-padding-16">
+    <h1 class="w3-center">Using HTML5 Canvas</h1>
+    <canvas id="draw" class="w3-center w3-container" width="500" height="333"></canvas>
+    </div>
+<script>
+    var canvas = document.getElementById('draw');
+    var context = canvas.getContext('2d');
+
+    resize();
+
+    function resize() {
+        canvas.style.width = '100%';
+        canvas.style.height = '100%';
+        canvas.width  = canvas.offsetWidth;
+        canvas.height = canvas.offsetHeight;
+    }
+
+    // Add event listeners
+    window.addEventListener('resize',resize);
+    window.addEventListener('mousemove',draw);
+    window.addEventListener('mousedown',setPosition);
+    window.addEventListener('mouseup',setPosition);
+
+    var position = {x:0, y:0};
+
+    // Set the new position from the mouse events
+    function setPosition(e) {
+        var rect = canvas.getBoundingClientRect();
+        position.x = e.clientX - rect.left;
+        position.y = e.clientY - rect.top;
+    }
+
+    function draw(e) {
+        // Check if button pressed
+        if(e.buttons != 1) return;
+
+        context.beginPath();
+
+        // Set line style
+        context.lineWidth = 10;
+        context.lineCap = 'round';
+        context.strokeStyle = 0;
+
+        // Starting point
+        context.moveTo(position.x,position.y);
+        setPosition(e);
+        // Destination point
+        context.lineTo(position.x,position.y);
+
+        // Draws the line
+        context.stroke();
+    }
+</script>
