@@ -11,4 +11,11 @@ class Contact(models.Model):
     date = models.DateTimeField()
 
     def __str__(self):
-        return str(self.email + str(self.date))
+        return str(self.email + '-' + str(self.date))
+
+    # ensures that only 40 entries are in the database
+    def check_save(self):
+        objects = Contact.objects.all()
+        if objects.count() == 40:
+            objects[0].delete()
+        self.save()

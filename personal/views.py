@@ -23,7 +23,8 @@ def index(request):
 
             contact = models.Contact(name=name, email=email, message=message,date=datetime.datetime.now())
 
-            contact.save()
+            # performs check before saving
+            contact.check_save()
 
             is_contact_sent = True
 
