@@ -6,7 +6,7 @@
     <title>David Jung</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="http://www.w3schools.com/lib/w3.css">
+    <link rel="stylesheet" href="{% static 'css/w3.css'  %}">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <meta charset="UTF-8">
@@ -25,9 +25,9 @@
         <li class="w3-left-align"><a href="/#home">HOME</a></li>
         <li class="w3-hide-small"><a href="/#about"><i class="fa fa-user"></i> ABOUT</a></li>
         <li class="w3-hide-small"><a href="/#experience"><i class="fa fa-th"></i> PORTFOLIO</a></li>
-        <li class="w3-hide-small"><a href="/blog/"><i class="fa fa-play"></i> BLOG</a></li>
-        <li class="w3-hide-small"><a href="/demos/"><i class="fa fa-play"></i> DEMOS</a></li>
         <li class="w3-hide-small"><a href="/#contact"><i class="fa fa-envelope"></i> CONTACT</a></li>
+        <li class="w3-hide-small"><a href="/blog/"><i class="fa fa-pencil"></i> BLOG</a></li>
+        <li class="w3-hide-small"><a href="/demos/"><i class="fa fa-play"></i> DEMOS</a></li>
     </ul>
 
     <!-- Navbar on small screens -->
@@ -36,6 +36,8 @@
             <li><a href="#about" onclick="toggleFunction()">ABOUT</a></li>
             <li><a href="#portfolio" onclick="toggleFunction()">PORTFOLIO</a></li>
             <li><a href="#contact" onclick="toggleFunction()">CONTACT</a></li>
+            <li><a href="/blog/" onclick="toggleFunction()">BLOG</a></li>
+            <li><a href="/demos/" onclick="toggleFunction()">DEMOS</a></li>
         </ul>
     </div>
 </div>
