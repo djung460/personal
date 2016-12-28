@@ -189,6 +189,9 @@
                     </div>
                     <input id="id_message_input" class="w3-input w3-border" type="text" placeholder="Message" required
                            name="message" value="{{ contact_form.message }}">
+                    {% if success %}
+                        <i class="fa fa-check"></i> Message Sent
+                    {% endif %}
                     <button class="w3-btn w3-black w3-right w3-padding w3-section" type="submit" value="OK">
                         <i class="fa fa-paper-plane"></i> SEND MESSAGE
                     </button>
