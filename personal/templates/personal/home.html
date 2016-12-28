@@ -175,17 +175,21 @@
                         href="https://ca.linkedin.com/in/djung460"> djung460 </a><br>
                 </div>
                 <p>Leave me a note</p>
-                <form action="form.asp" target="_blank">
+                <form role="form" action="" method="post">
+                    {% csrf_token %}
                     <div class="w3-row-padding" style="margin:0 -16px 8px -16px">
                         <div class="w3-half">
-                            <input class="w3-input w3-border" type="text" placeholder="Name" required name="Name">
+                            <input id="id_name_input" class="w3-input w3-border" type="text" placeholder="Name" required
+                                   name="name" value="{{ contact_form.name }}">
                         </div>
                         <div class="w3-half">
-                            <input class="w3-input w3-border" type="text" placeholder="Email" required name="Email">
+                            <input id="id_email_input" class="w3-input w3-border" type="text" placeholder="Email"
+                                   required name="email" value="{{ contact_form.email }}">
                         </div>
                     </div>
-                    <input class="w3-input w3-border" type="text" placeholder="Message" required name="Message">
-                    <button class="w3-btn w3-black w3-right w3-padding w3-section" type="submit">
+                    <input id="id_message_input" class="w3-input w3-border" type="text" placeholder="Message" required
+                           name="message" value="{{ contact_form.message }}">
+                    <button class="w3-btn w3-black w3-right w3-padding w3-section" type="submit" value="OK">
                         <i class="fa fa-paper-plane"></i> SEND MESSAGE
                     </button>
                 </form>
