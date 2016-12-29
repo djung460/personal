@@ -1,0 +1,10 @@
+{% extends 'personal/header.html' %}
+{% block content %}
+    <script src="https://cdn.pydata.org/bokeh/release/bokeh-0.12.3.min.js"></script>
+    {{ dashboard_script|safe }}
+    <link rel="stylesheet" href="https://cdn.pydata.org/bokeh/release/bokeh-0.12.3.min.css">
+
+    <div class="w3-content w3-center w3-container w3-padding-64">
+        {{ plot_div|safe }}
+    </div>
+{% endblock %}
