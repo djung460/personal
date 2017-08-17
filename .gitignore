@@ -8,3 +8,5 @@
 
 #ropeproject
 *.ropeproject
+
+*.DS_store
